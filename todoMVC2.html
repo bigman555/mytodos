@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/todoMVC2.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        [v-cloak] {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="app" v-cloak>
+        <header-todos></header-todos>
+        <bobyer-todos></bobyer-todos>
+    </div>
+    <script src="./js/vue.js"></script>
+    <script src="./router/routerTodos.js"></script>
+    <script src="./unils/utils.js"></script>
+    <script src="./components/header.js"></script>
+    <script src="./components/bodyer.js"></script>
+    <script src="./js/main.js"></script>
+</body>
+
+</html>

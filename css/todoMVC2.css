@@ -1,0 +1,152 @@
+#app {
+  width: 500px;
+  margin: 0 auto;
+  border: 1px solid pink;
+  --themColor: #ead7d8;
+}
+#app .hidden {
+  display: none;
+}
+#app .show {
+  display: block;
+}
+#app .app-header h1 {
+  color: var(--themColor);
+  text-align: center;
+  font-weight: 700;
+  font-size: 35px;
+}
+#app .app-content .app-content-top {
+  display: flex;
+  height: 30px;
+  position: relative;
+}
+#app .app-content .app-content-top .left {
+  display: flex;
+  height: 30px;
+  width: 5%;
+  font-size: 20px;
+  font-weight: 700;
+  justify-content: center;
+  transform: rotate(90deg);
+  color: #ddd;
+}
+#app .app-content .app-content-top .allcheck {
+  color: black;
+}
+#app .app-content .app-content-top .right {
+  width: 95%;
+}
+#app .app-content .app-content-top .right input {
+  width: 100%;
+  height: 100%;
+}
+#app .app-content .app-content-top .right ul {
+  background-color: rgba(120, 120, 120, 0.6);
+}
+#app .app-content .app-content-top .right ul li {
+  list-style: none;
+  text-align: center;
+  height: 25px;
+  line-height: 25px;
+}
+#app .app-content .app-content-list .app-content-listItem {
+  height: 50px;
+  line-height: 36px;
+  padding: 10px;
+  display: flex;
+  text-align: center;
+  border-bottom: 1px dotted skyblue;
+}
+#app .app-content .app-content-list .app-content-listItem .left {
+  flex: 1;
+}
+#app .app-content .app-content-list .app-content-listItem .middle {
+  flex: 8;
+  font-size: 25px;
+  text-align: left;
+}
+#app .app-content .app-content-list .app-content-listItem .completed {
+  color: #add;
+  text-decoration: line-through;
+}
+#app .app-content .app-content-list .app-content-listItem .right {
+  display: none;
+  flex: 1;
+}
+#app .app-content .app-content-list .app-content-listItem:hover .right {
+  display: block;
+}
+#app .app-buttom {
+  display: flex;
+  height: 50px;
+  align-items: center;
+  border-top: 1px solid #ddd;
+  justify-content: space-between;
+}
+#app .app-buttom .left {
+  margin-left: 10px;
+}
+#app .app-buttom .moddle {
+  display: flex;
+  margin-right: 10px;
+}
+#app .app-buttom .moddle a {
+  text-decoration: none;
+  color: black;
+  margin-left: 10px;
+}
+#app .app-buttom .moddle .middelLeft {
+  margin-right: 10px;
+}
+#app .app-buttom .moddle .middelMiddle {
+  margin-right: 10px;
+}
+#app .app-buttom .moddle .middelRight {
+  margin-right: 10px;
+}
+#app .app-buttom section.right {
+  margin-right: 10px;
+}
+.app-buttom .moddle a:hover {
+  border: 1px solid pink;
+}
+.tui-checkbox:checked {
+  background: #16ff35;
+}
+.tui-checkbox {
+  width: 35px;
+  height: 35px;
+  background-color: #ffffff;
+  border: solid 1px #dddddd;
+  -webkit-border-radius: 50%;
+  border-radius: 50%;
+  font-size: 0.8rem;
+  margin: 0;
+  padding: 0;
+  position: relative;
+  display: inline-block;
+  vertical-align: top;
+  cursor: default;
+  -webkit-appearance: none;
+  -webkit-user-select: none;
+  user-select: none;
+  -webkit-transition: background-color ease 0.1s;
+  transition: background-color ease 0.1s;
+}
+.tui-checkbox:checked::after {
+  content: '';
+  top: 8px;
+  left: 8px;
+  position: absolute;
+  background: transparent;
+  border: #fff solid 2px;
+  border-top: none;
+  border-right: none;
+  height: 9px;
+  width: 15px;
+  -moz-transform: rotate(-45deg);
+  -ms-transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+}

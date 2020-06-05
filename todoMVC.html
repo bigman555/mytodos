@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/todoMVC.css">
+</head>
+<style>
+    [v-cloak] {
+        display: none;
+      }
+</style>
+
+<body>
+    <div id="app" v-cloak>
+        <header>
+            <span>今天你努力了吗！</span>
+            <label for=""  @click="allcheck"></label>
+            <input type="text" 
+            placeholder="What needs to be done?" 
+            v-model="newTodo"
+            @keyup.enter="addNewTodo"
+            >
+        </header>
+        <section>
+            <ul>
+                <li v-for="item, index in obj">
+                    <div>
+                        <input type="checkbox" class="tui-checkbox" :checked=item.checkall>
+                        <label>{{item.text}}</label>
+                        <button class="del" @click="delNewtodo(index)">X</button>
+                    </div>
+                </li>
+            </ul>
+        </section>
+        <footer>
+            <div>剩下<span>0</span>项</div>
+            <ul>
+                <li>
+                    <a href="">All</a>
+                </li>
+                <li>
+                    <a href="">激活</a>
+                </li>
+                <li>
+                    <a href="">完成</a>
+                </li>
+            </ul>
+            <div class="delAll">清除已完成</div>
+        </footer>
+    </div>
+</body>
+<script src="./js/vue.js"></script>
+<script>
+    let vm = new Vue({
+        el:"#app",
+        data:{
+           newTodo:"",
+           obj:[]
+        },
+
+        methods:{
+            addNewTodo:function(){
+                let value= this.newTodo && this.newTodo.trim()
+                    if(!value){
+                        alert("不能白努力");
+                        return
+                    }
+                let todoobj = {
+                    id:0,
+                    text:'',
+                    checkall:false
+                }
+                todoobj.id = this.obj.length,
+                todoobj.text = this.newTodo,
+                this.obj.push(todoobj)
+                this.newTodo=""
+            },
+            delNewtodo:function(index){
+                this.obj.splice(index,1)
+            },   
+            allcheck:function(){
+                console.log("you");
+                this.$root.obj.map(function(e){
+                   e.checkall = true
+
+                })
+               
+            }
+        }
+    })
+    console.log(vm);
+</script>
+</html>
